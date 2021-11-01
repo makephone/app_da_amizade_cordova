@@ -9,7 +9,7 @@ $consulta="INSERT INTO `usuario` (id,nome,email,senha) VALUES (?,?,?,?)";
 
 
 try {
-	 $dbh = new PDO('mysql:host=mysqlhost;dbname=banco','usuario','senha');
+	 $dbh = new PDO('mysql:host=host;dbname=nomebanco','usuario','senha');
     //$dbh = new PDO('mysql:host=localhost;dbname=meupet','root','');
     $statement = $dbh->prepare($consulta);
     $statement->execute([$id,$nome,$email,$senha]);
@@ -50,7 +50,7 @@ $senha=$_GET["senha"];
 $consulta="SELECT * FROM `usuario` WHERE `email` =? AND `senha` =? ";
 
 try {
-    $dbh = new PDO('mysql:host=host;dbname=banco','usuario','senha');
+    $dbh = new PDO('mysql:host=host;dbname=nomebanco','usuario','senha');
     $statement = $dbh->prepare($consulta);
 	$statement ->bindValue(1,$email);
 	$statement ->bindValue(2,$senha);

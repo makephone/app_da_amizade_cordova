@@ -83,10 +83,12 @@ ngApp.controller('loginController',function($scope,$http,$location){
 			
 	  	
       var endereco='https://app/login.php?email='+user.email+'&senha='+user.senha;
-
+  
        cordova.plugin.http.sendRequest(endereco, options, function(response) {
-      if(response.data.length==0){
-         alert('senha incorreta')
+		  var t=JSON.stringify(response.data);
+		 
+      if(t=='"[]"'){
+        
 		 
 		 
 		 function alertDismissed() {
@@ -205,7 +207,9 @@ ngApp.controller('insertController',function($scope,$http,$location){
       var endereco='https://app/login.php?nome='+$scope.user.nome+'&email='+$scope.user.email+'&senha='+$scope.user.senha;  
 
        cordova.plugin.http.sendRequest(endereco, options, function(response) {
-      if(response.data.length==0){
+		var t=JSON.stringify(response.data);
+		 
+      if(t=='"[]"'){
        function alertDismissed() {
     // do something
        }
