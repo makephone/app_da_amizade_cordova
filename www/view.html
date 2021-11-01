@@ -1,0 +1,21 @@
+
+<div jqm>
+    <div data-role="header" data-position="fixed" data-theme="b">
+	<a data-role="button"  href="#/list" data-icon="carat-l">Listagem</a>
+        <h1>Perfil</h1>
+    </div>
+	<img src="amizade.png" class="centeramizade">
+    <div>
+        <h1>Nome : {{person.name}}</h1>
+        <h1>Local: {{person.location}}<h1/>
+     </div>
+    
+    <div>
+	<div class="centerbutton">
+        <a href="#/edit/{{person.id}}" class="centerbutton ui-corner-all ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-left"> Editar</a>
+        <button ng-click="delete(person)" class="centerbutton ui-corner-all ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Excluir</button>
+	<div>	
+    </div>
+    
+    
+</div>

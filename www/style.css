@@ -1,0 +1,44 @@
+
+/* breakpoint at 1000px, don't span full page width, 80% is plenty' */
+@media all and (min-width:62.5em){
+    .pageContainer { 
+        width:80%;
+        margin-left:10%;
+        margin-right:10%;
+        padding:0;
+    }
+}
+
+.block {
+    display:block;
+}
+
+.mbpv {
+    margin-top:10%;
+}
+.mbp {
+    margin-top:3%;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.mag{
+	margin-left:30px;
+}
+
+.centeramizade {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.centerbutton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

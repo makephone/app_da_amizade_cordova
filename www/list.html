@@ -1,0 +1,13 @@
+<div jqm>
+    <div data-role="header" data-position="fixed" data-theme="b" >
+	<a data-role="button" data-role="button" data-icon="back" href="#/login">Voltar</a>
+        <h1>Lista Da Amizade</h1>
+    </div>
+	<img src="amizade.png" class="centeramizade">
+    <ul class="ngRepeat" id="layoutList" data-role="listview" data-filter="true" data-filter-placeholder="Procurar Amigos..." data-inset="true" data-autodividers="true">
+        <li ng-repeat="person in personArray">
+            <a href="#/view/{{person.id}}">{{person.name}}</a>
+        </li>
+    </ul>
+    <a data-role="button"  class="mbp" data-icon="heart" href="#/create" >Novo Amizade</a>
+</div>

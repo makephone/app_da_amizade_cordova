@@ -1,0 +1,19 @@
+<div jqm>
+     <div data-role="header" data-position="fixed" data-theme="b" >
+	 <a data-role="button" data-role="button" data-icon="back" href="#/login">Voltar</a>
+        <h1>Cadastro</h1>
+    </div>
+	<div class="mag">
+	<h1>Faça Seu Cadastro</h1>
+	</div>
+	<div>
+	<form>
+	<input type="text"  placeholder="NOME" ng-model="user.nome">
+	<input type="email" type="email" placeholder="Email" ng-model="user.email">
+	<input type="password" placeholder="Senha" ng-model="user.senha">
+	<input type="password"   placeholder="Confirmar Senha Com 8 Digitos " ng-model="confirmaSenha">
+	</form>
+	<div class="mbpv"></div>
+	<button data-icon="plus" ng-click="cadastrar()">Cadastrar</button>
+	
+</div>
