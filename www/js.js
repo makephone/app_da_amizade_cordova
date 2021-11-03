@@ -4,12 +4,8 @@ var user ={
         senha: ''
     }
 
-
- var dados = window.localStorage.getItem("dados");
- if(dados!=null){ 
- dados=JSON.parse(dados)
- }
- arranjo=[];
+var dados;
+var arranjo=[];
 
 var personArray =arranjo; 
 
@@ -31,20 +27,28 @@ ngApp.controller('listController',function($scope,$location){
         $scope.$apply(function(){
 			
 			
-			if(dados!=null){
+			 dados = window.localStorage.getItem("dados");
+             	
+			
+			if(dados==null){
+				$location.path('/create');	
+			}else{
+			if(dados!='"[]"'){
+			dados=JSON.parse(dados)	
 			personArray=[]	
 			$.each(dados,function(i,obj){
 				personArray.push({'id':obj.id,'name':obj.name,'location':obj.location})
 			})	
-			  window.localStorage.removeItem("dados");
+		     $scope.personArray = personArray;
 			}else{
-				 $location.path('/list');				
+			  $location.path('/create');	
+			}	
 			}
 			
 			
 			
 			
-            $scope.personArray = personArray;
+           
         });
         $('ul.ngRepeat').listview('refresh');
     }); 
