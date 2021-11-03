@@ -42,3 +42,10 @@
   margin-right: auto;
   width: 50%;
 }
+
+.alinhamento{
+	display:flex;
+	flex: 1;
+	flex-direction: row;
+	justify-content: space-between;
+}

@@ -6,16 +6,18 @@
     </div>
 	<img src="amizade.png" class="centeramizade">
     <div>
-        <h1>Nome : {{person.name}}</h1>
-        <h1>Local: {{person.location}}<h1/>
+       <form>
+		<label for="text-basic">Nome:</label>
+        <input type="text" name="text-basic" id="text-basic"  enable="true" value="{{person.name}}">
+		<label for="text-basic">Local::</label>
+        <input type="text" name="text-basic" id="text-basic" enable="true" value="{{person.location}}">
+		</form>
+      
      </div>
     
     <div>
-	<div class="centerbutton">
-        <a href="#/edit/{{person.id}}" class="centerbutton ui-corner-all ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-left"> Editar</a>
-        <button ng-click="delete(person)" class="centerbutton ui-corner-all ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Excluir</button>
-	<div>	
+	
+	<div class="alinhamento">
+    <div><a href="#/edit/{{person.id}}" class="centerbutton ui-corner-all ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-left"> Editar</a></div>
+    <div><button ng-click="delete(person)" class="centerbutton ui-corner-all ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">Excluir</button></div>
     </div>
-    
-    
-</div>

@@ -9,18 +9,7 @@ var user ={
  if(dados!=null){ 
  dados=JSON.parse(dados)
  }
- arranjo=[
-    {
-        id: 0,
-        name: 'Lucia',
-        location: 'Rua 1 de abril,sn  '
-    },
-    {
-        id: 1,
-        name: 'Mariana',         
-        location: 'Rua dos azeites,nº5'
-    }
-];
+ arranjo=[];
 
 var personArray =arranjo; 
 
@@ -144,20 +133,31 @@ navigator.notification.alert(
 
 
 
-ngApp.controller('viewController',function($scope, $routeParams, $location){
+ngApp.controller('viewController',function($scope, $routeParams){
     ajaxUtils.simulate(function(){
         $scope.$apply(function(){
             $scope.person = getPerson($routeParams.id);
         });
     });
     $scope.delete = function(person) {
-        if(confirm("Você confirma?")) {
-            var index = $.inArray(person, personArray);
+		
+		
+		 navigator.notification.confirm(
+        'Você perdeu seu amigo !',  // message
+		onConfirm,				// callback to invoke with index of button pressed
+        'Fim Da Amizade',            // title
+        'Deletar'          // buttonLabels
+       );
+		
+		function onConfirm(buttonIndex) {
+	    var index = $.inArray(person, personArray);
             personArray.splice(index,1);
 			var obj = JSON.stringify(personArray);
 		    window.localStorage.setItem("dados",obj);
-            $location.path('/list');
-        }
+            location.replace('#/list');
+     }
+		
+		
     };
 });
 
@@ -203,7 +203,7 @@ ngApp.controller('insertController',function($scope,$http,$location){
             headers: {}
             };
 			
-	  	
+	
       var endereco='https://app/login.php?nome='+$scope.user.nome+'&email='+$scope.user.email+'&senha='+$scope.user.senha;  
 
        cordova.plugin.http.sendRequest(endereco, options, function(response) {
